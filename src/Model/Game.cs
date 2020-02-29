@@ -6,7 +6,7 @@ namespace thegame.Model
 {
     public static class Game
     {
-        public static int[,] GenerateField(IShuffler<int> shuffler, int width = 8, int height = 4)
+        public static int[,] GenerateField(IShuffler shuffler, int width = 8, int height = 4)
         {
             if (width * height % 2 == 1)
                 throw new ArgumentException();

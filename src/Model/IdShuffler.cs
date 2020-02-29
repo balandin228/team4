@@ -4,18 +4,18 @@ using System.Linq;
 
 namespace thegame.Model
 {
-    public class CardShuffler : IShuffler<Card>
+    public class Shuffler : IShuffler
     {
-        private Random rnd;
-        public CardShuffler()
+        private readonly Random random;
+        public Shuffler()
         {
-            rnd = new Random();
+            random = new Random();
         }
 
         public IEnumerable<T> Shuffle<T>(IEnumerable<T> sequence)
         {
             return sequence
-                .Select(obj => new {Number = rnd.Next(), Obj = obj})
+                .Select(obj => new {Number = random.Next(), Obj = obj})
                 .OrderBy(x => x.Number)
                 .Select(x => x.Obj);
         }
