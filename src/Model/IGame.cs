@@ -7,6 +7,6 @@ namespace thegame.Model
         int Points { get; }
         Card OpenedCard { get; }
 
-        Card[,] OpenCell(Guid id);
+        Card[,] MakeTurn(Guid id);
     }
 }

@@ -18,10 +18,10 @@ namespace thegame.Model
         }
 
 
-        public void FillInField(IEnumerable<Card> cards)
-        {
-            field = 
-        }
+        //public void FillInField(IEnumerable<Card> cards)
+        //{
+        //    field = 
+        //}
 
         public Card OpenedCard { get; private set; }
         public Card[,] MakeTurn(Guid id)
