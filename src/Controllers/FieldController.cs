@@ -4,7 +4,7 @@ using thegame.Model;
 
 namespace thegame.Controllers
 {
-    [Route("api/game/field")]
+    [Route("api/game/[controller]")]
     public class FieldController : Controller
     {
         private IShuffler shuffler;
@@ -12,7 +12,8 @@ namespace thegame.Controllers
         {
             shuffler = new Shuffler();
         }
-        [HttpGet("field")]
+        [Route("field")]
+        [HttpGet]
         public IActionResult Field()
         {
             return Ok(Game.GenerateField(shuffler));
