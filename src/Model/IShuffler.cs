@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace thegame.Model
 {
-    public interface IShuffler<T>
+    public interface IShuffler
     {
         IEnumerable<T> Shuffle<T>(IEnumerable<T> obj);
     }
