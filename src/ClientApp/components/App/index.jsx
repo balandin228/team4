@@ -5,6 +5,7 @@ import Field from '../Field';
 export default class App extends React.Component {
     constructor() {
         super();
+        let stertTime = Date.now();
         this.state = {
             score: 50,
             picture: [[1, 2, 3, 4],
@@ -14,16 +15,24 @@ export default class App extends React.Component {
                 [13, 14, 15, 16],
                 [13, 14, 15, 16],
                 [13, 14, 15, 16],
-                [13, 14, 15, 16]]
+                [13, 14, 15, 16]],
+            time: stertTime
         };
     }
     
     render() {
         return (
             <div className={styles.root}>
-                <div className={styles.score}>
-                    Ваш счет: {this.state.score}
+                <div className={styles.toolbar}>
+                    <div className={styles.score}>
+                        Ваш счет: {this.state.score}
+                    </div>
+                    <div className={styles.time}>
+                        Ваше время: {this.state.time - Date.now()}
+                    </div>
                 </div>
+               
+                
                 <table className={styles.field}>
                     {this.getField()}
                 </table>

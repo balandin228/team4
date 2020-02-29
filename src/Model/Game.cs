@@ -20,10 +20,15 @@ namespace thegame.Model
 
         public void FillInField(IEnumerable<Card> cards)
         {
-            field = 
+            field = null;
         }
 
         public Card OpenedCard { get; private set; }
+        public Card[,] OpenCell(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Card[,] MakeTurn(Guid id)
         {
             var card = FindCardById(id);
