@@ -1,14 +1,21 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using thegame.Model;
 
 namespace thegame.Controllers
 {
-    [Route("api/game")]
-    public class GameController : Controller
+    [Route("api/game/field")]
+    public class FieldController : Controller
     {
-        [HttpGet("score")]
-        public IActionResult Score()
+        private IShuffler shuffler;
+        public FieldController()
         {
-            return Ok(50);
+            shuffler = new Shuffler();
+        }
+        [HttpGet("field")]
+        public IActionResult Field()
+        {
+            return Ok(Game.GenerateField(shuffler));
         }
     }
 }
